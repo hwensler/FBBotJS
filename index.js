@@ -20,3 +20,15 @@ app.use(bodyParser.json())
 app.get('/', function (req, res){
   res.send('Hi!')
 })
+
+//get and verify the webhook
+app.get('/webhook/', function(req, res){
+    //verify if we have the right credentials to access facebook
+    if(req.query['hub.verify_token'] ===
+        'my_voice_is_my_password_verify_me'){
+        res.send(req.query['hub.challenge'])
+    }
+
+    //if they aren't equal, return send 'no entry'
+     res.send('No entry')
+})
