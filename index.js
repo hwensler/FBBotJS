@@ -10,6 +10,7 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express()
 
+//heroku environment variables
 const token = process.env.FB_VERIFY_TOKEN
 const access = process.env.FB_ACCESS_TOKEN
 
