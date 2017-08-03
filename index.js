@@ -4,7 +4,6 @@
  */
 
 //npm packages
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request');
@@ -14,7 +13,7 @@ const app = express()
 const token = process.env.FB_VERIFY_TOKEN
 const access = process.env.FB_ACCESS_TOKEN
 
-//set ports - enviroment variable OR localhost 5000
+//set ports - environment variable OR localhost 5000
 app.set('port', (process.env.PORT || 5000))
 
 //use json parser
@@ -38,25 +37,31 @@ app.get('/webhook/', function(req, res){
      res.send('No entry')
 })
 
+//add server
+app.listen(app.get('port'), function(){
+    //create log for heroku
+    console.log('running on port', app.get('port'))
+})
+
 //post things to webhook
-app.post('.webhook', function(req, res){
+app.post('/webhook', function(req, res){
     //store body of the request into data
     var data = req.body
 
     //make sure the object is coming from a page
-    if(data.object === 'page'){
+    if(data.object === 'page') {
 
         //iterate over each entry
-        data.entry.forEach(function(entry){
+        data.entry.forEach(function (entry) {
             var pageID = entry.id;
             var timeOfEvent = entry.time;
 
             //iterate over each messaging event
-            entry.messaging.forEach(function(event){
-                if(event.message){
+            entry.messaging.forEach(function (event) {
+                if (event.message) {
                     recievedMessage(event)
                 }
-                else{
+                else {
                     console.log("Webhook received unknown event: ", event)
                 }
             })
@@ -74,8 +79,4 @@ function receivedMessage(event){
 }
 
 
-//add server
-app.listen(app.get('port'), function(){
-    //create log for heroku
-    console.log('running on port', app.get('port'))
-})
+
