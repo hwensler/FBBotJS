@@ -38,6 +38,42 @@ app.get('/webhook/', function(req, res){
      res.send('No entry')
 })
 
+//post things to webhook
+app.post('.webhook', function(req, res){
+    //store body of the request into data
+    var data = req.body
+
+    //make sure the object is coming from a page
+    if(data.object === 'page'){
+
+        //iterate over each entry
+        data.entry.forEach(function(entry){
+            var pageID = entry.id;
+            var timeOfEvent = entry.time;
+
+            //iterate over each messaging event
+            entry.messaging.forEach(function(event){
+                if(event.message){
+                    recievedMessage(event)
+                }
+                else{
+                    console.log("Webhook received unknown event: ", event)
+                }
+            })
+        })
+
+        //assume all went well
+        //you must send back a 200 within 20 seconds, otherwise it'll time out
+        res.sendStatus(200)
+    }
+})
+
+function receivedMessage(event){
+    //log it
+    console.log("Message data: ", event.message)
+}
+
+
 //add server
 app.listen(app.get('port'), function(){
     //create log for heroku
