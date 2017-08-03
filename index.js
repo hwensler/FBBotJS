@@ -1,4 +1,7 @@
-
+/**
+ * Created by: HeatherWenslerNolis
+ * @type {createApplication}
+ */
 
 //npm packages
 
