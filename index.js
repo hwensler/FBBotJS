@@ -13,6 +13,7 @@ const app = express()
 //set ports - enviroment variable OR localhost 5000
 app.set('port', (process.env.PORT || 5000))
 
+//use json parser
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
@@ -31,4 +32,10 @@ app.get('/webhook/', function(req, res){
 
     //if they aren't equal, return send 'no entry'
      res.send('No entry')
+})
+
+//add server
+app.listen(app.get('port'), function(){
+    //create log for heroku
+    console.log('running on port', app.get('port'))
 })
