@@ -75,11 +75,14 @@ app.post('/webhook', function(req, res){
 
 
 function receivedMessage(event) {
+
+    //store information about this message
     var senderID = event.sender.id;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
     var message = event.message;
 
+    //log the message
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
@@ -106,5 +109,25 @@ function receivedMessage(event) {
     }
 }
 
+function sendGenericMessage(recipientId, messageText) {
+    // To be expanded in later sections
+}
+
+function sendTextMessage(recipientId, messageText) {
+    var messageData = {
+
+        //grab recipient
+        recipient: {
+            id: recipientId
+        },
+
+        //grab message
+        message: {
+            text: messageText
+        }
+    };
+
+    callSendAPI(messageData);
+}
 
 
