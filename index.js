@@ -10,6 +10,9 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express()
 
+const token = process.env.FB_VERIFY_TOKEN
+const access = process.env.FB_ACCESS_TOKEN
+
 //set ports - enviroment variable OR localhost 5000
 app.set('port', (process.env.PORT || 5000))
 
@@ -26,7 +29,7 @@ app.get('/', function (req, res){
 app.get('/webhook/', function(req, res){
     //verify if we have the right credentials to access facebook
     if(req.query['hub.verify_token'] ===
-        'heather'){
+        token){
         res.send(req.query['hub.challenge'])
     }
 
