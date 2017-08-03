@@ -1,0 +1,31 @@
+{
+  "name": "fbbotjs",
+  "version": "0.5.0",
+  "description": "First js facebook bot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hwensler/FBBotJS.git"
+  },
+  "keywords": [
+    "facebook",
+    "messenger",
+    "bot",
+    "node",
+    "heroku"
+  ],
+  "author": "Heather Nolis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hwensler/FBBotJS/issues"
+  },
+  "homepage": "https://github.com/hwensler/FBBotJS#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
