@@ -25,6 +25,11 @@ app.get('/', function (req, res){
   res.send('Hi!')
 })
 
+//generic PSID display
+app.get('/PSID/', function (req, res){
+    res.send('eventually a PSID will display here')
+})
+
 //get and verify the webhook (make sure url ends in /webhook)
 app.get('/webhook/', function(req, res){
     //verify if we have the right credentials to access facebook
