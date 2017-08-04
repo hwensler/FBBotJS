@@ -26,12 +26,12 @@ app.get('/', function (req, res){
 })
 
 //generic PSID display
+//TODO fix this
 app.get('/PSID/', function (req, res){
-    var data = req.body
 
     var PSID = req.body.id
 
-    res.send('Body: ' + PSID)
+    res.send('PSID: ' + PSID)
 })
 
 //get and verify the webhook (make sure url ends in /webhook)
