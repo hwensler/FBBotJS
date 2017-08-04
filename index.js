@@ -42,17 +42,6 @@ app.get('/webhook/', function(req, res){
      res.send('No entry')
 })
 
-// //attempting to display PSID
-// app.get('/PSID/', function(req, res){
-//     MessengerExtensions.getUserID(function success(uids) {
-//         //userID was obtained
-//         var psid = uids.psid
-//     }
-//     function error(err, errorMessage){
-//         //error handling code
-//
-//     }
-// })
 
 //add server
 app.listen(app.get('port'), function(){
