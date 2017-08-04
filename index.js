@@ -206,7 +206,7 @@ function sendPSIDLink(recipientId) {
                         title: "GET YOUR PSID HERE",
                         subtitle: "This is really exciting. I promise.",
                         item_url: "https://testscooper.herokuapp.com/PSID",
-                        image_url: "https://pbs.twimg.com/profile_images/822228399561342976/zD42_jP-_400x400.jpg",
+                        image_url: "http://i.imgur.com/3WeDzjg.png",
                         buttons: [{
                             type: "web_url",
                             url: "https://testscooper.herokuapp.com/PSID",
