@@ -29,7 +29,7 @@ app.get('/', function (req, res){
 app.get('/PSID/', function (req, res){
     var data = req.body
 
-    data.entry.id = PSID
+    var PSID = data.entry.id
 
     res.send('Body: ' + PSID)
 })
