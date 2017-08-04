@@ -28,10 +28,7 @@ app.get('/', function (req, res){
 //generic PSID display
 //TODO fix this
 app.get('/PSID/', function (req, res){
-
-    var PSID = req.body.id
-
-    res.send('PSID: ' + PSID)
+    res.send("PSID: " + req.psid)
 })
 
 //get and verify the webhook (make sure url ends in /webhook)
@@ -209,7 +206,7 @@ function sendPSIDLink(recipientId) {
                     elements: [{
                         title: "GET YOUR PSID HERE",
                         subtitle: "This is really exciting. I promise.",
-                        item_url: "https://testscooper.herokuapp.com/PSID",
+                        item_url: "https://testscooper.herokuapp.com/PSID?psid=" + recipientId,
                         image_url: "http://i.imgur.com/3WeDzjg.png",
                         buttons: [{
                             type: "web_url",
