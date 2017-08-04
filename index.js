@@ -97,8 +97,8 @@ function receivedMessage(event) {
         // If we receive a text message, check to see if it matches a keyword
         // and send back the example. Otherwise, just echo the text we received.
         switch (messageText) {
-            case 'generic':
-                sendGenericMessage(senderID);
+            case 'cool':
+                sendCoolMessage(senderID);
                 break;
 
             default:
@@ -109,9 +109,6 @@ function receivedMessage(event) {
     }
 }
 
-function sendGenericMessage(recipientId, messageText) {
-    // To be expanded in later sections
-}
 
 function sendTextMessage(recipientId, messageText) {
     var messageData = {
@@ -153,7 +150,7 @@ function callSendAPI(messageData) {
     });
 }
 
-function sendGenericMessage(recipientId) {
+function sendCoolMessage(recipientId) {
     var messageData = {
         recipient: {
             id: recipientId
