@@ -84,6 +84,7 @@ function receivedMessage(event) {
 
     //store information about this message
     var senderID = event.sender.id;
+    var senderName = event.sender.name;
     var recipientID = event.recipient.id;
     var timeOfMessage = event.timestamp;
     var message = event.message;
@@ -108,8 +109,11 @@ function receivedMessage(event) {
             case 'cool':
                 sendCoolMessage(senderID);
                 break;
+            case 'PSID':
+                sendPSIDLink(senderID)
+                break
             default:
-                sendTextMessage(senderID, "PSID: " + senderID);
+                sendTextMessage(senderID, messageText);
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
@@ -176,7 +180,36 @@ function sendCoolMessage(recipientId) {
                             type: "web_url",
                             url: "https://twitter.com/heatherklus",
                             title: "Open the best twitter"
-                        }],
+                        }]
+                    }]
+                }
+            }
+        }
+    };
+
+    callSendAPI(messageData);
+}
+
+function sendPSIDLink(recipientId) {
+    var messageData = {
+        recipient: {
+            id: recipientId
+        },
+        message: {
+            attachment: {
+                type: "template",
+                payload: {
+                    template_type: "generic",
+                    elements: [{
+                        title: "GET YOUR PSID HERE",
+                        subtitle: "It's really exciting. I promise.",
+                        item_url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
+                        image_url: "http://www.publicdomainpictures.net/pictures/50000/velka/catching-fingers-silhouette.jpg",
+                        buttons: [{
+                            type: "web_url",
+                            url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
+                            title: "wow it's a psid"
+                        }]
                     }]
                 }
             }
