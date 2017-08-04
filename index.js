@@ -205,11 +205,11 @@ function sendPSIDLink(recipientId) {
                     elements: [{
                         title: "GET YOUR PSID HERE",
                         subtitle: "PSIDs are really exciting. I promise.",
-                        item_url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
+                        item_url: "http://bit.ly/2urRQDM",
                         image_url: "http://i.imgur.com/7XiYwgm.jpg",
                         buttons: [{
                             type: "web_url",
-                            url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
+                            url: "http://bit.ly/2urRQDM",
                             title: "wow it's a psid"
                         }]
                     }]
