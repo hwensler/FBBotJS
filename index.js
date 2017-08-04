@@ -25,7 +25,7 @@ app.get('/', function (req, res){
   res.send('Hi!')
 })
 
-//get and verify the webhook
+//get and verify the webhook (make sure url ends in /webhook)
 app.get('/webhook/', function(req, res){
     //verify if we have the right credentials to access facebook
     if(req.query['hub.verify_token'] ===
@@ -97,10 +97,11 @@ function receivedMessage(event) {
         // If we receive a text message, check to see if it matches a keyword
         // and send back the example. Otherwise, just echo the text we received.
         switch (messageText) {
+
+            //if the message just says 'cool'
             case 'cool':
                 sendCoolMessage(senderID);
                 break;
-
             default:
                 sendTextMessage(senderID, messageText);
         }
