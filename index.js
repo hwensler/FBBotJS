@@ -109,6 +109,8 @@ function receivedMessage(event) {
             case 'cool':
                 sendCoolMessage(senderID);
                 break;
+
+            //if the message requests a PSID
             case 'PSID':
                 sendPSIDLink(senderID)
                 break
@@ -204,7 +206,7 @@ function sendPSIDLink(recipientId) {
                         title: "GET YOUR PSID HERE",
                         subtitle: "It's really exciting. I promise.",
                         item_url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
-                        image_url: "http://www.publicdomainpictures.net/pictures/50000/velka/catching-fingers-silhouette.jpg",
+                        image_url: "http://i.imgur.com/7XiYwgm.jpg",
                         buttons: [{
                             type: "web_url",
                             url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
