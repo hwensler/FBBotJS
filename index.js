@@ -20,7 +20,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-//function has a request and a response
+//generic display
 app.get('/', function (req, res){
   res.send('Hi!')
 })
@@ -35,6 +35,18 @@ app.get('/webhook/', function(req, res){
 
     //if they aren't equal, return send 'no entry'
      res.send('No entry')
+})
+
+//attempting to display PSID
+app.get('/PSID/', function(req, res){
+    MessengerExtensions.getUserID(function success(uids) {
+        //userID was obtained
+        var psid = uids.psid
+    }
+    function error(err, errorMessage){
+        //error handling code
+
+    }
 })
 
 //add server
