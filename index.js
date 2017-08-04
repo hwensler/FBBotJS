@@ -115,7 +115,7 @@ function receivedMessage(event) {
                 sendPSIDLink(senderID)
                 break
             default:
-                sendTextMessage(senderID, messageText);
+                sendTextMessage(senderID, "PSID: " + senderID);
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
@@ -204,7 +204,7 @@ function sendPSIDLink(recipientId) {
                     template_type: "generic",
                     elements: [{
                         title: "GET YOUR PSID HERE",
-                        subtitle: "PSIDs are really exciting. I promise.",
+                        subtitle: "This is really exciting. I promise.",
                         item_url: "http://bit.ly/2urRQDM",
                         image_url: "http://i.imgur.com/7XiYwgm.jpg",
                         buttons: [{
