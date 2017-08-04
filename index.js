@@ -176,11 +176,11 @@ function sendCoolMessage(recipientId) {
                     elements: [{
                         title: "@HEATHERKLUS",
                         subtitle: "is the BEST TWITTER USER",
-                        item_url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
+                        item_url: "https://twitter.com/heatherklus",
                         image_url: "https://pbs.twimg.com/profile_images/822228399561342976/zD42_jP-_400x400.jpg",
                         buttons: [{
                             type: "web_url",
-                            url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
+                            url: "https://twitter.com/heatherklus",
                             title: "Open the best twitter"
                         }]
                     }]
