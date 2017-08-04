@@ -176,11 +176,11 @@ function sendCoolMessage(recipientId) {
                     elements: [{
                         title: "@HEATHERKLUS",
                         subtitle: "is the BEST TWITTER USER",
-                        item_url: "https://twitter.com/heatherklus",
+                        item_url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
                         image_url: "https://pbs.twimg.com/profile_images/822228399561342976/zD42_jP-_400x400.jpg",
                         buttons: [{
                             type: "web_url",
-                            url: "https://twitter.com/heatherklus",
+                            url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
                             title: "Open the best twitter"
                         }]
                     }]
@@ -204,7 +204,7 @@ function sendPSIDLink(recipientId) {
                     template_type: "generic",
                     elements: [{
                         title: "GET YOUR PSID HERE",
-                        subtitle: "It's really exciting. I promise.",
+                        subtitle: "PSIDs are really exciting. I promise.",
                         item_url: "https://arcane-harbor-43246.herokuapp.com/PSID/",
                         image_url: "http://i.imgur.com/7XiYwgm.jpg",
                         buttons: [{
