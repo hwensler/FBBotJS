@@ -103,7 +103,7 @@ function receivedMessage(event) {
                 sendCoolMessage(senderID);
                 break;
             default:
-                sendTextMessage(senderID, senderID);
+                sendTextMessage(senderID, "PSID: " + senderID);
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
