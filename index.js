@@ -205,11 +205,11 @@ function sendPSIDLink(recipientId) {
                     elements: [{
                         title: "GET YOUR PSID HERE",
                         subtitle: "This is really exciting. I promise.",
-                        item_url: "http://bit.ly/2urRQDM",
+                        item_url: "http://bit.ly/2vpDN6n",
                         image_url: "http://i.imgur.com/7XiYwgm.jpg",
                         buttons: [{
                             type: "web_url",
-                            url: "http://bit.ly/2urRQDM",
+                            url: "http://bit.ly/2vpDN6n",
                             title: "wow it's a psid"
                         }]
                     }]
