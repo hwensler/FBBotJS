@@ -205,11 +205,11 @@ function sendPSIDLink(recipientId) {
                     elements: [{
                         title: "GET YOUR PSID HERE",
                         subtitle: "This is really exciting. I promise.",
-                        item_url: "https://testscooper.herokuapp.com/PSID",
+                        item_url: "https://twitter.com/heatherklus",
                         image_url: "http://i.imgur.com/7XiYwgm.jpg",
                         buttons: [{
                             type: "web_url",
-                            url: "https://testscooper.herokuapp.com/PSID",
+                            url: "https://twitter.com/heatherklus",
                             title: "wow it's a psid"
                         }]
                     }]
