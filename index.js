@@ -210,7 +210,7 @@ function sendPSIDLink(recipientId) {
                         image_url: "http://i.imgur.com/3WeDzjg.png",
                         buttons: [{
                             type: "web_url",
-                            url: "https://testscooper.herokuapp.com/PSID",
+                            url: "https://testscooper.herokuapp.com/PSID?psid=" + recipientId,
                             title: "wow it's a psid"
                         }]
                     }]
