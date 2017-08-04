@@ -182,7 +182,7 @@ function sendCoolMessage(recipientId) {
                             type: "web_url",
                             url: "https://twitter.com/heatherklus",
                             title: "Open the best twitter"
-                        }]
+                        }],
                     }]
                 }
             }
