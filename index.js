@@ -28,7 +28,7 @@ app.get('/', function (req, res){
 //generic PSID display
 //TODO fix this
 app.get('/PSID/', function (req, res){
-    var psid = req.param('PSID')
+    var psid = req.query.PSID
     res.send("PSID: " + psid)
 })
 
