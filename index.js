@@ -217,7 +217,12 @@ function sendPSIDLink(recipientId) {
                             url: "https://testscooper.herokuapp.com/PSID?psid=" + recipientId,
                             title: "wow it's a psid",
                             messenger_extensions: true,
+
+                            //can be "comapct" "tall" or "full"
                             webview_height_ratio : "tall",
+
+                            //this is to prevent sharing because (1) this should be a private interaction
+                            //and (2) it doesn't work anywhere but in webview so it shouldn't be shared
                             webview_share_button: "hide"
                         }]
                     }]
