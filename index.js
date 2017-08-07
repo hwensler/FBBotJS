@@ -31,6 +31,9 @@ app.get('/PSID/', function (req, res){
     res.send("PSID: " + psid)
 })
 
+//get PSID through the webview for mobile
+
+
 
 //get and verify the webhook (make sure url ends in /webhook)
 app.get('/webhook/', function(req, res){
@@ -212,7 +215,9 @@ function sendPSIDLink(recipientId) {
                         buttons: [{
                             type: "web_url",
                             url: "https://testscooper.herokuapp.com/PSID?psid=" + recipientId,
-                            title: "wow it's a psid"
+                            title: "wow it's a psid",
+                            messenger_extensions: true,
+                            webview_height_ratio : "tall"
                         }]
                     }]
                 }
