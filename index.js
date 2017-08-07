@@ -28,8 +28,8 @@ app.get('/', function (req, res){
 //generic PSID display
 //TODO fix this
 app.get('/PSID/', function (req, res){
-    var params = req.param
-    res.send("Params: " + url)
+    var url = req.param('url')
+    res.send("URL: " + url)
 })
 
 
