@@ -217,7 +217,8 @@ function sendPSIDLink(recipientId) {
                             url: "https://testscooper.herokuapp.com/PSID?psid=" + recipientId,
                             title: "wow it's a psid",
                             messenger_extensions: true,
-                            webview_height_ratio : "tall"
+                            webview_height_ratio : "tall",
+                            webview_share_button: "hide"
                         }]
                     }]
                 }
