@@ -32,6 +32,17 @@ app.get('/PSID/', function (req, res){
 })
 
 //get PSID through the webview for mobile
+app.get('/webviewPSID/', function(req, res){
+
+        MessengerExtensions.getUserID(function success(uids) {
+            // User ID was successfully obtained.
+            var psid = uids.psid;
+
+        }, function error(err, errorMessage) {
+            // Error handling code
+        })
+    
+})
 
 
 
