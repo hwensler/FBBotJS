@@ -143,7 +143,7 @@ function receivedMessage(event) {
             case 'webviewPSID':
                 sendWebviewPSIDMessage(senderID)
                 break;
-                
+
             default:
                 sendTextMessage(senderID, "PSID: " + senderID);
         }
@@ -301,4 +301,5 @@ function sendWebviewPSIDMessage(recipientId) {
     };
 
     callSendAPI(messageData);
+}
 
