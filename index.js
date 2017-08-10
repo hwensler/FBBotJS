@@ -137,7 +137,13 @@ function receivedMessage(event) {
             //if the message requests a PSID
             case 'PSID':
                 sendPSIDLink(senderID)
-                break
+                break;
+
+            //if message requests a webview PSID
+            case 'webviewPSID':
+                sendWebviewPSIDMessage(senderID)
+                break;
+                
             default:
                 sendTextMessage(senderID, "PSID: " + senderID);
         }
