@@ -268,3 +268,31 @@ function sendPSIDLink(recipientId) {
     callSendAPI(messageData);
 }
 
+function sendWebviewPSIDMessage(recipientId) {
+    var messageData = {
+        recipient: {
+            id: recipientId
+        },
+        message: {
+            attachment: {
+                type: "template",
+                payload: {
+                    template_type: "generic",
+                    elements: [{
+                        title: "Webview PSID",
+                        subtitle: "webview psid",
+                        item_url: "https://testscooper.herokuapp.com/webviewPSID",
+                        image_url: "http://i.imgur.com/3WeDzjg.png",
+                        buttons: [{
+                            type: "web_url",
+                            url: "https://testscooper.herokuapp.com/webviewPSID",
+                            title: "get your psid through webview"
+                        }]
+                    }]
+                }
+            }
+        }
+    };
+
+    callSendAPI(messageData);
+
