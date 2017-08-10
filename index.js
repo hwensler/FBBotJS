@@ -54,6 +54,9 @@ app.listen(app.get('port'), function(){
     console.log('running on port', app.get('port'))
 })
 
+/**
+ * A function used to verify webhook
+ */
 //post things to webhook
 app.post('/webhook', function(req, res){
     //store body of the request into data
@@ -84,7 +87,10 @@ app.post('/webhook', function(req, res){
     }
 })
 
-
+/**
+ * Logs a received message
+ * @param event - an event representing a received message
+ */
 function receivedMessage(event) {
 
     //store information about this message
@@ -127,7 +133,11 @@ function receivedMessage(event) {
     }
 }
 
-
+/**
+ * Sends a text only message
+ * @param recipientId - the recipient of the message
+ * @param messageText - the text o the message
+ */
 function sendTextMessage(recipientId, messageText) {
     var messageData = {
 
@@ -145,7 +155,10 @@ function sendTextMessage(recipientId, messageText) {
     callSendAPI(messageData);
 }
 
-
+/**
+ * Calls the API to send a message
+ * @param messageData  - a json of the message contents
+ */
 function callSendAPI(messageData) {
     request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
@@ -168,6 +181,10 @@ function callSendAPI(messageData) {
     });
 }
 
+/**
+ * a test Generic message type
+ * @param recipientId
+ */
 function sendCoolMessage(recipientId) {
     var messageData = {
         recipient: {
@@ -197,6 +214,10 @@ function sendCoolMessage(recipientId) {
     callSendAPI(messageData);
 }
 
+/**
+ * Sends a link that shows the user's PSID
+ * @param recipientId - the ID of the user who is receiving this message
+ */
 function sendPSIDLink(recipientId) {
     var messageData = {
         recipient: {
