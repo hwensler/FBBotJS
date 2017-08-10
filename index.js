@@ -39,11 +39,11 @@ app.get('/webviewPSID/', function(req, res){
         MessengerExtensions.getUserID(function success(uids) {
             // User ID was successfully obtained.
             var psid = uids.psid;
-            //res.send("PSID: " + psid)
+            res.send("PSID: " + psid)
 
         }, function error(err, errorMessage) {
             // Error handling code
-            //res.send("It didn't work. :(")
+            res.send("It didn't work. :(")
         })
 })
 
