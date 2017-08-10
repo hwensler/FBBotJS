@@ -32,6 +32,7 @@ app.get('/PSID/', function (req, res){
 })
 
 //get PSID through the webview for mobile
+//TODO: fix. - gives internal server error
 app.get('/webviewPSID/', function(req, res){
 
         MessengerExtensions.getUserID(function success(uids) {
