@@ -35,16 +35,17 @@ app.get('/PSID/', function (req, res){
 //TODO: fix. - gives internal server error
 app.get('/webviewPSID/', function(req, res){
     window.extAsyncInit = function(){
-        var psid = req.query.psid
-        MessengerExtensions.getUserID(function success(uids) {
-            // User ID was successfully obtained.
-            var psid = uids.psid;
-            res.send("PSID: " + psid)
-
-        }, function error(err, errorMessage) {
-            // Error handling code
-            res.send("It didn't work. :(")
-        })
+        res.send("it works!")
+        // var psid = req.query.psid
+        // MessengerExtensions.getUserID(function success(uids) {
+        //     // User ID was successfully obtained.
+        //     var psid = uids.psid;
+        //     res.send("PSID: " + psid)
+        //
+        // }, function error(err, errorMessage) {
+        //     // Error handling code
+        //     res.send("It didn't work. :(")
+        // })
     }
 })
 
