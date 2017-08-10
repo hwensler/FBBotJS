@@ -34,8 +34,8 @@ app.get('/PSID/', function (req, res){
 //get PSID through the webview for mobile
 //TODO: fix. - gives internal server error
 app.get('/webviewPSID/', function(req, res){
-
-    var psid = req.query.psid
+    window.extAsyncInit = function(){
+        var psid = req.query.psid
         MessengerExtensions.getUserID(function success(uids) {
             // User ID was successfully obtained.
             var psid = uids.psid;
@@ -45,6 +45,7 @@ app.get('/webviewPSID/', function(req, res){
             // Error handling code
             res.send("It didn't work. :(")
         })
+    }
 })
 
 
