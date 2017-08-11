@@ -12,7 +12,7 @@
         //respond to the SDK loaded event
 
 
-        window.extAsyncInit = function() {
+        function getPSID () {
             //the messenger extensions js sdk is done loading
             MessengerExtensions.getContext(
                 '1742835346010014',
@@ -40,6 +40,6 @@
 
 
     </script>
-<p>See?</p>
+    <button onclick="getPSID()">PSID</button>
 </body>
 </html>
