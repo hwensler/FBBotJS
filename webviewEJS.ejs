@@ -21,20 +21,35 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'Messenger'));
 
+//        window.extAsyncInit = function() {
+//
+//            // the Messenger Extensions JS SDK is done loading
+//            MessengerExtensions.getUserID(function success(uids) {
+//
+//                var psid = usids.psid
+//                console.log("PSID FOUND!!! " + psid)
+//
+//            }, function error(err) {
+//                window.attachApp();
+//                console.log("no PSID found :(")
+//            });
+//        };
+
         window.extAsyncInit = function() {
+            //the messenger extensions js sdk is done loading
+            MessengerExtensions.getContext(
+                '1111111111111',
+                function success(context){
+                    window.attach(context.psid)
+                    var psid = context.psid
+                    console.log("PSID FOUND!!! " + psid)
+                },
+                function error(err){
+                    window.attachApp()
+                    console.log("no PSID found")
+                })
+        }
 
-            // the Messenger Extensions JS SDK is done loading
-            MessengerExtensions.getUserID(function success(uids) {
-
-                var psid = usids.psid
-                console.log("PSID FOUND!!! " + psid)
-
-            }, function error(err) {
-                window.attachApp();
-                console.log("no PSID found :(")
-            });
-        };
-        
 
     </script>
 <p>See?</p>
