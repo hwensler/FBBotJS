@@ -7,11 +7,11 @@
 <body>
 <div id="content"></div>
 <script>
-
+    var test = 'test'
+    <%=test%>
     //respond to the SDK loaded event
     window.extAsyncInit = function() {
-        var test = 'test'
-        <%=test%>
+
         // the Messenger Extensions JS SDK is done loading
         MessengerExtensions.getUserID(function success(uids) {
 
