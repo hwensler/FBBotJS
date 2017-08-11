@@ -8,8 +8,6 @@
     <div id="content"></div>
 
     <script>
-        var test = 'test'
-        <p><%=test%></p>
         //respond to the SDK loaded event
         window.extAsyncInit = function() {
 
@@ -17,9 +15,11 @@
             MessengerExtensions.getUserID(function success(uids) {
 
                 var psid = usids.psid
+                console.log("PSID FOUND!!! " + psid)
 
             }, function error(err) {
                 window.attachApp();
+                console.log("no PSID found :(")
             });
         };
 
