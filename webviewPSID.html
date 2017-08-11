@@ -12,7 +12,8 @@
         window.extAsyncInit = function() {
             // the Messenger Extensions JS SDK is done loading
             MessengerExtensions.getUserID(function success(uids) {
-                window.attachApp(uids.psid, gift);
+
+                var psid = usids.psid
                 }, function error(err) {
                 window.attachApp();
             });
