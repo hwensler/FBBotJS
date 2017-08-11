@@ -26,9 +26,9 @@
             MessengerExtensions.getContext(
                 '1742835346010014',
                 function success(context){
-                    window.attach(context.psid)
-                    var psid = context.psid
-                    console.log("PSID FOUND!!! " + psid)
+                    window.attach(
+                        context.psid,
+                    <%= context.psid %>)
                 },
                 function error(err){
                     window.attachApp()
