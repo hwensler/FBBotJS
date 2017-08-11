@@ -35,7 +35,7 @@ app.get('/PSID/', function (req, res){
 
 //trying to set up a function to send an entire html page
 app.get('/webviewPSID', function(req, res){
-    res.sendFile(path.join(__dirname+'/webviewPSID.js'));
+    res.sendFile(path.join(__dirname+'/webviewPSID.html'));
 })
 
 
