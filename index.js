@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express()
 
-car path = require("path")
+var path = require('path')
 
 //heroku environment variables
 const token = process.env.FB_VERIFY_TOKEN
@@ -33,6 +33,10 @@ app.get('/PSID/', function (req, res){
     res.send("PSID: " + psid)
 })
 
+//trying to set up a function to send an entire html page
+app.get('/webviewPSID', function(req, res){
+    res.sendFile(path.join(_dirname+'/webviewPSID.js'));
+})
 
 
 
