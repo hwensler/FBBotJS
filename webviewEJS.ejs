@@ -5,32 +5,33 @@
     <title>It Works!</title>
 </head>
 <body>
-<div id="content"></div>
-var test = 'test'
-<%=test%>
-<script>
-    //respond to the SDK loaded event
-    window.extAsyncInit = function() {
+    <div id="content"></div>
 
-        // the Messenger Extensions JS SDK is done loading
-        MessengerExtensions.getUserID(function success(uids) {
+    <script>
+        var test = 'test'
+        <p><%=test%></p>
+        //respond to the SDK loaded event
+        window.extAsyncInit = function() {
 
-            var psid = usids.psid
+            // the Messenger Extensions JS SDK is done loading
+            MessengerExtensions.getUserID(function success(uids) {
 
-        }, function error(err) {
-            window.attachApp();
-        });
-    };
+                var psid = usids.psid
 
-    //include the messenger extensions JS library
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'Messenger'));
-</script>
+            }, function error(err) {
+                window.attachApp();
+            });
+        };
+
+        //include the messenger extensions JS library
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'Messenger'));
+    </script>
 <p>See?</p>
 </body>
 </html>
