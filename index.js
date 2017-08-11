@@ -9,6 +9,8 @@ const bodyParser = require('body-parser')
 const request = require('request');
 const app = express()
 
+car path = require("path")
+
 //heroku environment variables
 const token = process.env.FB_VERIFY_TOKEN
 const access = process.env.FB_ACCESS_TOKEN
@@ -31,36 +33,6 @@ app.get('/PSID/', function (req, res){
     res.send("PSID: " + psid)
 })
 
-//get PSID through the webview for mobile
-//TODO: fix. - gives internal server error
-app.get('/webviewPSID/', function(req, res){
-
-    //include messenger extensions in js library
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'Messenger'))
-
-    //respond to sdk loaded event
-    window.extAsyncInit = function() {
-        // the Messenger Extensions JS SDK is done loading
-    };
-
-        
-        var psid = req.query.psid
-        MessengerExtensions.getUserID(function success(uids) {
-            // User ID was successfully obtained.
-            var psid = uids.psid;
-            res.send("PSID: " + psid)
-
-        }, function error(err, errorMessage) {
-            // Error handling code
-            res.send("It didn't work. :(")
-        })
-})
 
 
 
