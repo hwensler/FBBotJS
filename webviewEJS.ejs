@@ -23,32 +23,11 @@
                 function success(context){
                     var psid = context.psid.toString();
                     console.log("PSID FOUND: " + psid)
-                    window.attach(
-                        context.psid,
-                            <%= context.psid %>)
                 },
                 function error(err){
-                    window.attachApp()
                     console.log("no PSID found")
                 });
         };
-
-        function getPSID () {
-            //the messenger extensions js sdk is done loading
-            MessengerExtensions.getContext(
-                '1742835346010014',
-                function success(context){
-                    var psid = context.psid.toString();
-                    alert(psid)
-                    window.attach(
-                        context.psid,
-                            <%= context.psid %>)
-                },
-                function error(err){
-                    window.attachApp()
-                    console.log("no PSID found")
-                })
-        }
     </script>
     <script>
         //include the messenger extensions JS library
