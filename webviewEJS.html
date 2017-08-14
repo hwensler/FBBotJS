@@ -2,21 +2,32 @@
 <html>
 <head>
     <title>It Works!</title>
-    <script>
-        //include the messenger extensions JS library
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = '//connect.facebook.com/en_US/messenger.Extensions.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'Messenger'));
-    </script>
 
 </head>
 <body>
 <script>
+    //include the messenger extensions JS library
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = '//connect.facebook.com/en_US/messenger.Extensions.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+</script>
+<script>
     //respond to the SDK loaded event
+
+    //get supported features
+    MessengerExtensions.getSupportedFeatures(function success(result) {
+        var features = result.supported_features;
+        document.getElementById("console").innerHTML = features;
+    }, function error(err) {
+
+    });
+
+
+
     window.extAsyncInit = function() {
         alert('I am loaded');
         console.log('load function called');
@@ -37,5 +48,6 @@
 </script>
 
 <div id="psidContainer"></div>
+<div id="console"></div>
 </body>
 </html>
