@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>It Works!</title>
-
-
-
-
 </head>
 <body>
 <script>
@@ -18,18 +13,12 @@
         js.src = '//connect.facebook.com/en_US/messenger.Extensions.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
-
-
 </script>
-
-    <button onclick="getPSID()">PSID</button>
-
     <script>
-
         //respond to the SDK loaded event
-
         window.extAsyncInit = function() {
-            console.log('load function called')
+            alert('I am loaded');
+            console.log('load function called');
             // the Messenger Extensions JS SDK is done loading
             MessengerExtensions.getContext(
                 '1742835346010014',
@@ -42,5 +31,6 @@
                 });
         };
     </script>
+<div id="psidContainer"></div>
 </body>
 </html>
