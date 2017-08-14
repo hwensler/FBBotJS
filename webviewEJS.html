@@ -12,28 +12,29 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'Messenger'));
     </script>
-    <script>
-        //respond to the SDK loaded event
-        window.extAsyncInit = function() {
-            alert('I am loaded');
-            console.log('load function called');
-            // the Messenger Extensions JS SDK is done loading
-            MessengerExtensions.getContext(
-                '1742835346010014',
-                function success(context){
-                    var psid = context.psid.toString();
-                    console.log('PSID FOUND: ' + psid);
-                    document.getElementById("psidContainer").innerHTML = psid;
-                },
-                function error(err){
-                    console.log('no PSID found')
-                    document.getElementById("psidContainer").innerHTML = "no psid found <br>" + typeof err + " " + err;
 
-                });
-        };
-    </script>
 </head>
 <body>
+<script>
+    //respond to the SDK loaded event
+    window.extAsyncInit = function() {
+        alert('I am loaded');
+        console.log('load function called');
+        // the Messenger Extensions JS SDK is done loading
+        MessengerExtensions.getContext(
+            '1742835346010014',
+            function success(context){
+                var psid = context.psid.toString();
+                console.log('PSID FOUND: ' + psid);
+                document.getElementById("psidContainer").innerHTML = psid;
+            },
+            function error(err){
+                console.log('no PSID found')
+                document.getElementById("psidContainer").innerHTML = "no psid found <br>" + typeof err + " " + err;
+
+            });
+    };
+</script>
 
 <div id="psidContainer"></div>
 </body>
