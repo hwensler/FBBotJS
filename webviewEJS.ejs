@@ -7,16 +7,17 @@
 
 
     <script>
-        console.log("starting to look for psid")
+
         //respond to the SDK loaded event
 
         window.extAsyncInit = function() {
+            console.log("load function called")
             // the Messenger Extensions JS SDK is done loading
             MessengerExtensions.getContext(
                 '1742835346010014',
                 function success(context){
                     var psid = context.psid.toString();
-                    alert(psid)
+                    console.log("PSID FOUND: " + psid)
                     window.attach(
                         context.psid,
                             <%= context.psid %>)
