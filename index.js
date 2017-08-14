@@ -267,6 +267,10 @@ function sendPSIDLink(recipientId) {
     callSendAPI(messageData);
 }
 
+/**
+ * A function that collects the PSID through the webview
+ * @param recipientId
+ */
 function sendWebviewPSIDMessage(recipientId) {
     var messageData = {
         recipient: {
