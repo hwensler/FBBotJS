@@ -285,7 +285,8 @@ function sendWebviewPSIDMessage(recipientId) {
                         buttons: [{
                             type: "web_url",
                             url: "https://testscooper.herokuapp.com/webviewPSID",
-                            title: "get your psid through webview"
+                            title: "get your psid through webview",
+                            messenger_extensions: true,
                         }]
                     }]
                 }
