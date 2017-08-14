@@ -29,7 +29,7 @@
                 },
                 function error(err){
                     console.log('no PSID found')
-                    document.getElementById("psidContainer").innerHTML = "no psid found <br>" + err.message + err.statusCode;
+                    document.getElementById("psidContainer").innerHTML = "no psid found <br>" + typeof err + " " + err;
 
                 });
         };
