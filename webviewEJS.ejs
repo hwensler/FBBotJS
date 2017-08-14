@@ -6,6 +6,11 @@
 
 
 
+
+</head>
+<body>
+    <button onclick="getPSID()">PSID</button>
+
     <script>
 
         //respond to the SDK loaded event
@@ -37,7 +42,7 @@
                     alert(psid)
                     window.attach(
                         context.psid,
-                    <%= context.psid %>)
+                            <%= context.psid %>)
                 },
                 function error(err){
                     window.attachApp()
@@ -56,8 +61,5 @@
 
 
     </script>
-</head>
-<body>
-    <button onclick="getPSID()">PSID</button>
 </body>
 </html>
