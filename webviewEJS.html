@@ -18,9 +18,6 @@
 <script>
     //respond to the SDK loaded event
     window.extAsyncInit = function() {
-        alert('I am loaded');
-        console.log('load function called');
-
         //get supported features
         MessengerExtensions.getSupportedFeatures(function success(result) {
             var features = result.supported_features;
@@ -29,10 +26,10 @@
 
         });
 
-        
+
         // the Messenger Extensions JS SDK is done loading
         MessengerExtensions.getContext(
-            '1742835346010014',
+            '133394710595363',
             function success(context){
                 var psid = context.psid.toString();
                 console.log('PSID FOUND: ' + psid);
