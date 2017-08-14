@@ -18,24 +18,15 @@
 <script>
     //respond to the SDK loaded event
     window.extAsyncInit = function() {
-        //get supported features
-        MessengerExtensions.getSupportedFeatures(function success(result) {
-            var features = result.supported_features;
-            document.getElementById("console").innerHTML = JSON.stringify(features);
-        }, function error(err) {
-            document.getElementById("console").innerHTML = "no supported features <br>" + typeof err + " " + err;
-        });
-
-
         // the Messenger Extensions JS SDK is done loading
         MessengerExtensions.getContext(
             '133394710595363',
             function success(context){
                 var psid = context.psid.toString();
-                document.getElementById("psidContainer").innerHTML = psid;
+                document.getElementById("psidContainer").innerHTML = "PSID: " + psid;
             },
             function error(err){
-                document.getElementById("psidContainer").innerHTML = "no psid found <br>" + typeof err + " " + err;
+                document.getElementById("psidContainer").innerHTML = "This feature is only available on the latest version of the Messenger app. Please update!";
 
             });
     };
